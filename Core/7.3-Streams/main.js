@@ -25,4 +25,5 @@ fs.createReadStream('input.txt.gz')
   .pipe(fs.createWriteStream('input2.txt'));
 
 console.log("Archivo Descomprimido");
+
 */
