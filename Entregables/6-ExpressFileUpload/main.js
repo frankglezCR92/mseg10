@@ -11,7 +11,7 @@ var fileUpload = require('express-fileupload'); //npm install --save express-fil
 // variable que controla Express
 var app = express();
 app.use(fileUpload());
-app.use(express.static('public'));
+app.use(express.static('upload'));
 
 // GET
 app.get('/', function (req, res) {
@@ -23,15 +23,15 @@ app.post('/file_upload',  function (req, res) {
   if (!req.files)
     return res.status(400).send('No se subio ningun archivo.');
 
-  let upFile = req.files.archivo; //agarra el archivo de pantalla.
+  let upFile = req.files.archivo;
 
-  upFile.mv('public/'+req.files.archivo.name, function(err){ //Mueve el archivo a la carpeta deseada.
+  upFile.mv('upload/'+req.files.archivo.name, function(err){
       if (err)
           return res.status(500).send(err);
       res.send('Archivo se subio con exito');
   });
 
-  console.log(req.files.archivo.name); //imprime el nombre del archivo
+  console.log(req.files.archivo.name);
 });
 
 
