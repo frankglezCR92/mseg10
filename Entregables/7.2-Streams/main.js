@@ -13,7 +13,7 @@ var readerStream1 = fs.createReadStream('a-wing.txt');
 
 // Create a writable stream
 var readerStream2 = fs.createReadStream('j-type-327.txt');
-var endFile = fs.createWriteStream('fran.txt')
+var endfile = fs.createWriteStream('fran.txt')
 readerStream1.pipe(endfile);
 readerStream2.pipe(endfile);
 
